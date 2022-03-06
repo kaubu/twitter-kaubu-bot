@@ -15,7 +15,6 @@ Create a file name `.env` and lay it out like so:
 ```
 API_KEY=
 API_KEY_SECRET=
-BEARER_TOKEN=
 ACCESS_TOKEN=
 ACCESS_TOKEN_SECRET=
 ENV_TEST=.env has been loaded
