@@ -43,3 +43,7 @@ client = tweepy.Client(
     access_token_secret = USER_ACCESS_TOKEN_SECRET,
 )
 
+xkaubu = client.get_user(username="xkaubu")
+print(f"xkaubu obj: {xkaubu}\n")
+xkaubu_id = xkaubu.data.id
+print(f"xkaubu's Twitter ID is {xkaubu_id}")
