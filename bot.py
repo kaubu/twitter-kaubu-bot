@@ -36,18 +36,10 @@ USER_ACCESS_TOKEN_SECRET = os.getenv("USER_ACCESS_TOKEN_SECRET")
 input("Press ENTER to start program...")
 
 client = tweepy.Client(
+    bearer_token = BEARER_TOKEN, # REQUIRED
     consumer_key = API_KEY,
     consumer_secret = API_KEY_SECRET,
     access_token = USER_ACCESS_TOKEN,
     access_token_secret = USER_ACCESS_TOKEN_SECRET,
 )
-
-kaubu = client.get_user(username="kaubu")
-print(f"kaubu = {kaubu}:")
-pprint(kaubu)
-print(f"kaubu.data = {kaubu.data}:")
-pprint(kaubu.data)
-print(f"kaubu.data type = {type(kaubu.data)}")
-print(f"kaubu.data.id = {kaubu.data.id}")
-client.follow_user(kaubu.data.id)
 
