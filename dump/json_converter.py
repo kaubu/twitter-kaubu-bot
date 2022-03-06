@@ -37,7 +37,7 @@ with open(output_name, "a") as f:
     print("Getting messages from JSON...")
     
     for message in data:
-        messages.append(message["text"])
+        messages.append(f"{message['text']}\n")
     
     print("Writing to file...")
     f.writelines(messages)
