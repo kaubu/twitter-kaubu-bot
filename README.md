@@ -6,9 +6,7 @@ The bot is available at [@kaubuBOT](https://twitter.com/xkaubuBOT)
 ## Setup
 Install these dependencies:
 
-`pip install tweepy`
-
-`pip install python-dotenv`
+`pip install tweepy python-dotenv numpy nltk tensorflow`
 
 Create a file name `.env` and lay it out like so:
 
