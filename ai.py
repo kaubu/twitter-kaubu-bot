@@ -1,3 +1,5 @@
+# Based on code from here: https://stackabuse.com/text-generation-with-python-and-tensorflow-keras/
+
 # Built-in
 import sys
 
@@ -130,20 +132,20 @@ if __name__ == "__main__":
             optimizer="adam"
         )
 
-        # Where the model file will be located
-        print("Setting model checkpoint...")
-        filepath = input("Model file name to save to: ")
-        filepath = f"models/{filepath}.hdf5"
-        checkpoint = ModelCheckpoint(
-            filepath,
-            monitor="loss",
-            verbose=1,
-            save_best_only=True,
-            mode="min"
-        )
-        desired_callbacks = [checkpoint]
-
         if TRAIN_MODEL:
+            # Where the model file will be located
+            print("Setting model checkpoint...")
+            filepath = input("Model file name to save to: ")
+            filepath = f"models/{filepath}.hdf5"
+            checkpoint = ModelCheckpoint(
+                filepath,
+                monitor="loss",
+                verbose=1,
+                save_best_only=True,
+                mode="min"
+            )
+            desired_callbacks = [checkpoint]
+
             # Fit the model and let it train
             print("Fitting model...")
             print("Training model...")
@@ -184,7 +186,7 @@ Run again with TRAIN_MODEL set to False to skip this next time""")
         # Iterate through a chosen number of characters
         # and then append it to the list of generated
         # characters plus the initial seed
-        print("Generating sentence...")
+        print("Generating characters...")
         for i in range(1000):
             x = numpy.reshape(pattern, (1, len(pattern), 1))
             x = x / float(vocab_len)
@@ -195,4 +197,4 @@ Run again with TRAIN_MODEL set to False to skip this next time""")
             sys.stdout.write(result)
 
             pattern.append(index)
-            pattern = pattern[1:len(pattern)]
+            # pattern = pattern[1:len(pattern)]
